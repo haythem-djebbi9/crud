@@ -1,0 +1,29 @@
+{# templates/book/list.html.twig #}
+
+<h1>Liste des Livres</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Titre</th>
+        <th>Publié</th>
+        <th>Actions</th>
+    </tr>
+    {% for book in books %}
+    <tr>
+        <td>{{ book.id }}</td>
+        <td>{{ book.title }}</td>
+        <td>{{ book.published ? 'Oui' : 'Non' }}</td>
+        <td>
+            <form action="{{ path('app_book_edit', {id: book.id}) }}" method="POST">
+                <button type="submit">Modifier</button>
+            </form>
+            <form action="{{ path('app_book_delete', {id: book.id}) }}" method="POST">
+                <button type="submit">Supprimer</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<a href="{{ path('app_book_add') }}">Ajouter un Livre</a>

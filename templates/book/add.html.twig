@@ -1,0 +1,16 @@
+{# templates/book/add.html.twig #}
+
+<h1>Ajouter un Livre</h1>
+
+<form method="POST">
+    <label for="title">Titre:</label>
+    <input type="text" id="title" name="title" required>
+
+    <label for="published">Publié:</label>
+    <select id="published" name="published">
+        <option value="true">Oui</option>
+        <option value="false">Non</option>
+    </select>
+
+    <button type="submit">Ajouter</button>
+</form>

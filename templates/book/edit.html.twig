@@ -1,0 +1,13 @@
+<h1>Modifier le Livre</h1>
+<form method="POST" action="{{ path('app_book_edit', {'id': book.id}) }}">
+    <label for="title">Titre du Livre:</label>
+    <input type="text" id="title" name="title" value="{{ book.title }}" required>
+    <br>
+    <label for="published">Publié:</label>
+    <select id="published" name="published" required>
+        <option value="true" {{ book.published ? 'selected' : '' }}>Oui</option>
+        <option value="false" {{ not book.published ? 'selected' : '' }}>Non</option>
+    </select>
+    <br>
+    <button type="submit">Modifier</button>
+</form>
